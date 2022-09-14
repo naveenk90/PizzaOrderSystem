@@ -1,21 +1,17 @@
 <header class="header">Welcome to Pizza Order System</header>
 <br />
+{{ productsList[0].name }}
 <div class="container">
-  <div class="card" style="width: 18rem;">
-    <img
-      width="100%"
-      height="180"
-      src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/margherita.90f9451fd66871fb6f9cf7d506053f18.1.jpg?width=800"
-    />
-
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="row row-cols-4 row-cols-md-4 g-4">
+    <div class="col" *ngFor="let item of productsList; let i = index">
+      <div class="card" style="width: 18rem;">
+        <img width="100%" height="180" src="item.imageUrl" />
+        <div class="card-body">
+          <h5 class="card-title">item.name</h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
