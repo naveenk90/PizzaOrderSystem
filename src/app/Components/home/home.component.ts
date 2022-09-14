@@ -9,11 +9,11 @@ import { Products } from '../../Common/Models/products.model';
 export class HomeComponent implements OnInit {
   productsList: Products[] = [];
 
-  constructor() {}
-
-  ngOnInit() {
+  constructor() {
     this.bindProductsList();
   }
+
+  ngOnInit() {}
 
   bindProductsList(): void {
     this.productsList = [
