@@ -1,15 +1,17 @@
 <header class="header">Welcome to Pizza Order System</header>
 <br />
-{{ productsList[0].name }}
-
-<div class="row row-cols-4 row-cols-md-4 g-4">
-  <div class="col" *ngFor="let item of productsList">
-    <div class="card" style="width: 18rem;">
-      <img width="100%" height="180" src="item.imageUrl" />
-      <div class="card-body">
-        <h5 class="card-title">{{ item.name }}</h5>
-        <p class="card-text">{{ item.description }}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container">
+  <div class="row col-md-6">
+    <div class="col-6" *ngFor="let item of productsList">
+      <div class="card">
+        <img class="imgClass" src="{{ item.imageUrl }}" />
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+          <button type="button" class="btn btn-link right">Ingredients</button>
+          <a href="#" class="btn btn-primary">Add to Cart</a>
+          <b class="right"> {{ item.price | currency: '&#8377;' }}</b>
+        </div>
       </div>
     </div>
   </div>
